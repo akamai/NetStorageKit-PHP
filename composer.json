@@ -11,7 +11,8 @@
         "theseer/phpdox": "0.8.1.1",
         "phploc/phploc": "^2.1",
         "squizlabs/php_codesniffer": "^2.3",
-        "fabpot/php-cs-fixer": "^1.10"
+        "fabpot/php-cs-fixer": "^1.10",
+        "dshafik/guzzlehttp-vcr": "dev-master"
     },
     "license": "Apache 2.0",
     "authors": [

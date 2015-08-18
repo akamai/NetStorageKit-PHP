@@ -1,0 +1,318 @@
+[
+    {
+        "status": 200,
+        "headers": {
+            "Server": [
+                "Apache"
+            ],
+            "Content-Type": [
+                "text\/xml"
+            ],
+            "Expires": [
+                "Fri, 21 Aug 2015 20:11:14 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Fri, 21 Aug 2015 20:11:14 GMT"
+            ],
+            "Content-Length": [
+                "130"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1440187874"
+            ]
+        },
+        "body": "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n<stat directory=\"\/383568\">\n\t<file type=\"dir\" name=\"test\" mtime=\"1440187029\"\/>\n<\/stat>\n",
+        "version": "1.1",
+        "reason": "OK"
+    },
+    {
+        "status": 200,
+        "headers": {
+            "Server": [
+                "Apache"
+            ],
+            "Content-Type": [
+                "text\/xml"
+            ],
+            "Expires": [
+                "Fri, 21 Aug 2015 20:11:14 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Fri, 21 Aug 2015 20:11:14 GMT"
+            ],
+            "Content-Length": [
+                "180"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1440187875"
+            ]
+        },
+        "body": "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n<stat directory=\"\/383568\/test\">\n\t<file type=\"dir\" name=\"*\" mtime=\"1440187029\"\/>\n\t<file type=\"dir\" name=\"\\\" mtime=\"1440186386\"\/>\n<\/stat>\n",
+        "version": "1.1",
+        "reason": "OK"
+    },
+    {
+        "status": 200,
+        "headers": {
+            "Server": [
+                "Apache"
+            ],
+            "Content-Type": [
+                "text\/xml"
+            ],
+            "Expires": [
+                "Fri, 21 Aug 2015 20:11:14 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Fri, 21 Aug 2015 20:11:14 GMT"
+            ],
+            "Content-Length": [
+                "86"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1440187875"
+            ]
+        },
+        "body": "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n<stat directory=\"\/383568\/test\/*\">\n<\/stat>\n",
+        "version": "1.1",
+        "reason": "OK"
+    },
+    {
+        "status": 200,
+        "headers": {
+            "Server": [
+                "Apache"
+            ],
+            "Content-Type": [
+                "text\/xml"
+            ],
+            "Expires": [
+                "Fri, 21 Aug 2015 20:11:14 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Fri, 21 Aug 2015 20:11:14 GMT"
+            ],
+            "Content-Length": [
+                "134"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1440187875"
+            ]
+        },
+        "body": "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n<stat directory=\"\/383568\/test\/\\\">\n\t<file type=\"dir\" name=\"\\\" mtime=\"1440186386\"\/>\n<\/stat>\n",
+        "version": "1.1",
+        "reason": "OK"
+    },
+    {
+        "status": 200,
+        "headers": {
+            "Server": [
+                "Apache"
+            ],
+            "Content-Type": [
+                "text\/xml"
+            ],
+            "Expires": [
+                "Fri, 21 Aug 2015 20:11:14 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Fri, 21 Aug 2015 20:11:14 GMT"
+            ],
+            "Content-Length": [
+                "88"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1440187875"
+            ]
+        },
+        "body": "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n<stat directory=\"\/383568\/test\/\\\/\\\">\n<\/stat>\n",
+        "version": "1.1",
+        "reason": "OK"
+    },
+    {
+        "status": 200,
+        "headers": {
+            "Server": [
+                "Apache"
+            ],
+            "Content-Type": [
+                "text\/xml"
+            ],
+            "Expires": [
+                "Fri, 21 Aug 2015 20:11:14 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Fri, 21 Aug 2015 20:11:14 GMT"
+            ],
+            "Content-Length": [
+                "132"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1440187875"
+            ]
+        },
+        "body": "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n<stat directory=\"\/383568\/test\">\n\t<file type=\"dir\" name=\"*\" mtime=\"1440187029\"\/>\n<\/stat>\n",
+        "version": "1.1",
+        "reason": "OK"
+    },
+    {
+        "status": 200,
+        "headers": {
+            "Server": [
+                "Apache"
+            ],
+            "Content-Type": [
+                "text\/xml"
+            ],
+            "Expires": [
+                "Fri, 21 Aug 2015 20:11:14 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Fri, 21 Aug 2015 20:11:14 GMT"
+            ],
+            "Content-Length": [
+                "86"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1440187875"
+            ]
+        },
+        "body": "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n<stat directory=\"\/383568\/test\/*\">\n<\/stat>\n",
+        "version": "1.1",
+        "reason": "OK"
+    },
+    {
+        "status": 200,
+        "headers": {
+            "Server": [
+                "Apache"
+            ],
+            "Content-Type": [
+                "text\/xml"
+            ],
+            "Expires": [
+                "Fri, 21 Aug 2015 20:11:14 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Fri, 21 Aug 2015 20:11:14 GMT"
+            ],
+            "Content-Length": [
+                "132"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1440187875"
+            ]
+        },
+        "body": "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n<stat directory=\"\/383568\/test\">\n\t<file type=\"dir\" name=\"*\" mtime=\"1440187029\"\/>\n<\/stat>\n",
+        "version": "1.1",
+        "reason": "OK"
+    },
+    {
+        "status": 412,
+        "headers": {
+            "Server": [
+                "Apache"
+            ],
+            "Content-Type": [
+                "text\/html; charset=iso-8859-1"
+            ],
+            "Expires": [
+                "Fri, 21 Aug 2015 20:11:15 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Fri, 21 Aug 2015 20:11:15 GMT"
+            ],
+            "Transfer-Encoding": [
+                "chunked"
+            ],
+            "Connection": [
+                "close",
+                "Transfer-Encoding"
+            ],
+            "X-VCR-Recording": [
+                "1440187875"
+            ]
+        },
+        "body": "<!DOCTYPE HTML PUBLIC \"-\/\/IETF\/\/DTD HTML 2.0\/\/EN\">\n<HTML><HEAD>\n<TITLE>412 Precondition Failed<\/TITLE>\n<\/HEAD><BODY>\n<H1>Precondition Failed<\/H1>\nThe precondition on the request for the URL \/383568\/test\/* evaluated to false.<P>\n<\/BODY><\/HTML>\n",
+        "version": "1.1",
+        "reason": "Precondition Failed"
+    }
+]
