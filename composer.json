@@ -19,5 +19,15 @@
             "name": "Davey Shafik",
             "email": "dshafik@akamai.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Akamai\\NetStorage\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Akamai\\NetStorage\\Tests\\": "tests"
+        }
+    }
 }
