@@ -11,6 +11,14 @@ This library provides the following NetStorage tools
 - [ ] A PHP streams layer, so you can use `netstorage.fs://path` with _any_ built-in I/O functions (e.g. `fopen`, `fread()`, and `fputs`, or `file_get_contents()` and `file_put_contents()`)
 - [ ] A FlySystem adapter for NetStorage ObjectStore
 
+## Installation
+
+Installation is done via `composer`:
+
+```
+$ composer require akamai-open/netstorage
+```
+
 ## Using the Request Signer
 
 ```php
