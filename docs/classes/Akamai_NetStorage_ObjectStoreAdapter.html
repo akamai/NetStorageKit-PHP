@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Akamai\NetStorage\ObjectStoreAdapter</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html#Akamai_NetStorage">Akamai\NetStorage</a>
+          </li>
+          <li class="separator">ObjectStoreAdapter</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#coverage">Coverage</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/ObjectStoreAdapter.php.html#line29">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Akamai\NetStorage\</small>ObjectStoreAdapter</h1>
+        <h4/>
+        <p/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class ObjectStoreAdapter
+                extends AbstractAdapter
+                implements
+                AdapterInterface
+            {<br/><ul class="none"><li>// members</li><li>protected <span title="\GuzzleHttp\Client">Client</span> <a href="#members">$httpClient</a>;
+                    </li><li>protected  <a href="#members">$cpCode</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/__construct.html">__construct</a>()
+                    </li><li>public array|false <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/createDir.html">createDir</a>()
+                    </li><li>public bool <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/delete.html">delete</a>()
+                    </li><li>public bool <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/deleteDir.html">deleteDir</a>()
+                    </li><li>public array|false <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/getMetadata.html">getMetadata</a>()
+                    </li><li>public array|false <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/getMimetype.html">getMimetype</a>()
+                    </li><li>public string <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/getPathPrefix.html">getPathPrefix</a>()
+                    </li><li>public array|false <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/getSize.html">getSize</a>()
+                    </li><li>public array|false <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/getTimestamp.html">getTimestamp</a>()
+                    </li><li>public array|bool|null <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/has.html">has</a>()
+                    </li><li>public array <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/listContents.html">listContents</a>()
+                    </li><li>public array|false <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/read.html">read</a>()
+                    </li><li>public array|false <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/readStream.html">readStream</a>()
+                    </li><li>public bool <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/rename.html">rename</a>()
+                    </li><li>public array|false <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/update.html">update</a>()
+                    </li><li>public array|false <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/updateStream.html">updateStream</a>()
+                    </li><li>public array|false <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/write.html">write</a>()
+                    </li><li>public array|false <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/writeStream.html">writeStream</a>()
+                    </li><li>protected bool <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/ensurePath.html">ensurePath</a>()
+                    </li><li>protected string <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/getAcsActionHeaderValue.html">getAcsActionHeaderValue</a>()
+                    </li><li>protected array <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/handleFileMetaData.html">handleFileMetaData</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>League\Flysystem\Adapter\AbstractAdapter</li>
+          </ul>
+          <h4>Uses</h4>
+          <ul>
+            <li>League\Flysystem\Adapter\Polyfill\NotSupportingVisibilityTrait</li>
+            <li>League\Flysystem\Adapter\Polyfill\StreamedCopyTrait</li>
+          </ul>
+          <h4>Implements</h4>
+          <ul>
+            <li>League\Flysystem\AdapterInterface</li>
+          </ul>
+        </div>
+        <h2 id="coverage">Coverage</h2>
+        <table class="styled">
+          <tr>
+            <td>Methods</td>
+            <td class="percent">0%</td>
+            <td class="nummeric">0 / 21</td>
+          </tr>
+          <tr>
+            <td>Lines</td>
+            <td class="percent">0%</td>
+            <td class="nummeric">0 / 151</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="cpCode"><strong>$cpCode</strong>
+                —
+                string</li>
+            <li id="httpClient"><strong>$httpClient</strong>
+                —
+                <a title="\GuzzleHttp\Client" href="../classes/_GuzzleHttp_Client.html">\GuzzleHttp\Client</a></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="ensurePath">
+              <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/ensurePath.html">ensurePath()</a>
+            </li>
+            <li id="getAcsActionHeaderValue">
+              <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/getAcsActionHeaderValue.html">getAcsActionHeaderValue()</a>
+            </li>
+            <li id="handleFileMetaData">
+              <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/handleFileMetaData.html">handleFileMetaData()</a>
+            </li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct">
+              <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/__construct.html">__construct()</a>
+            </li>
+            <li id="createDir"><a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/createDir.html">createDir()</a>
+                — Create a directory.</li>
+            <li id="delete"><a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/delete.html">delete()</a>
+                — Delete a file.</li>
+            <li id="deleteDir"><a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/deleteDir.html">deleteDir()</a>
+                — Delete a directory.</li>
+            <li id="getMetadata"><a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/getMetadata.html">getMetadata()</a>
+                — Get all the meta data of a file or directory.</li>
+            <li id="getMimetype"><a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/getMimetype.html">getMimetype()</a>
+                — Get the mimetype of a file.</li>
+            <li id="getPathPrefix">
+              <a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/getPathPrefix.html">getPathPrefix()</a>
+            </li>
+            <li id="getSize"><a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/getSize.html">getSize()</a>
+                — Get all the meta data of a file or directory.</li>
+            <li id="getTimestamp"><a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/getTimestamp.html">getTimestamp()</a>
+                — Get the timestamp of a file.</li>
+            <li id="has"><a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/has.html">has()</a>
+                — Check whether a file exists.</li>
+            <li id="listContents"><a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/listContents.html">listContents()</a>
+                — List contents of a directory.</li>
+            <li id="read"><a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/read.html">read()</a>
+                — Read a file.</li>
+            <li id="readStream"><a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/readStream.html">readStream()</a>
+                — Read a file as a stream.</li>
+            <li id="rename"><a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/rename.html">rename()</a>
+                — Rename a file.</li>
+            <li id="update"><a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/update.html">update()</a>
+                — Update a file.</li>
+            <li id="updateStream"><a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/updateStream.html">updateStream()</a>
+                — Update a file using a stream.</li>
+            <li id="write"><a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/write.html">write()</a>
+                — Write a new file.</li>
+            <li id="writeStream"><a title="Akamai\NetStorage\ObjectStoreAdapter" href="../classes/Akamai_NetStorage_ObjectStoreAdapter/writeStream.html">writeStream()</a>
+                — Write a new file using a stream.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.8.2-dev - Copyright (C) 2010 - 2015 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Akamai\NetStorage\Authentication</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.html">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.html">Namespaces</a>
+        </li>
+        <li>
+          <a href="../classes.html">Classes</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.html">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.html">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.html#Akamai_NetStorage">Akamai\NetStorage</a>
+          </li>
+          <li class="separator">Authentication</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#coverage">Coverage</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Authentication.php.html#line27">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Akamai\NetStorage\</small>Authentication</h1>
+        <h4/>
+        <p/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Authentication
+            {<br/><ul class="none"><li>// members</li><li>protected  <a href="#members">$key</a>;
+                    </li><li>protected <span title="Akamai\NetStorage\Key">Key</span> <a href="#members">$key_name</a>;
+                    </li><li>protected string <a href="#members">$reserved</a> =
+                        "0.0.0.0";
+                    </li><li>protected <span title="\Akamai\Open\EdgeGrid\Authentication\Timestamp">Timestamp</span> <a href="#members">$timestamp</a>;
+                    </li><li>protected <span title="\Akamai\Open\EdgeGrid\Authentication\Nonce">Nonce</span> <a href="#members">$nonce</a>;
+                    </li><li>protected  <a href="#members">$path</a>;
+                    </li><li>protected  <a href="#members">$action</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/createAuthHeaders.html">createAuthHeaders</a>()
+                    </li><li>public $this <a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/setKey.html">setKey</a>()
+                    </li><li>public $this <a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/setTimestamp.html">setTimestamp</a>()
+                    </li><li>public $this <a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/setNonce.html">setNonce</a>()
+                    </li><li>public $this <a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/setPath.html">setPath</a>()
+                    </li><li>public $this <a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/setAction.html">setAction</a>()
+                    </li><li>protected string <a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/signRequest.html">signRequest</a>()
+                    </li><li>protected string <a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/makeBase64HmacSha256.html">makeBase64HmacSha256</a>()
+                    </li><li>protected string <a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/makeDataToSign.html">makeDataToSign</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="coverage">Coverage</h2>
+        <table class="styled">
+          <tr>
+            <td>Methods</td>
+            <td class="percent">77.78%</td>
+            <td class="nummeric">7 / 9</td>
+          </tr>
+          <tr>
+            <td>Lines</td>
+            <td class="percent">76.19%</td>
+            <td class="nummeric">32 / 42</td>
+          </tr>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="action">
+              <strong>$action</strong>
+            </li>
+            <li id="key"><strong>$key</strong>
+                —
+                string</li>
+            <li id="key_name"><strong>$key_name</strong>
+                —
+                <a title="Akamai\NetStorage\Key" href="../classes/Akamai_NetStorage_Key.html">Akamai\NetStorage\Key</a></li>
+            <li id="nonce"><strong>$nonce</strong>
+                —
+                <a title="\Akamai\Open\EdgeGrid\Authentication\Nonce" href="../classes/_Akamai_Open_EdgeGrid_Authentication_Nonce.html">\Akamai\Open\EdgeGrid\Authentication\Nonce</a></li>
+            <li id="path">
+              <strong>$path</strong>
+            </li>
+            <li id="reserved"><strong>$reserved</strong>
+                —
+                string</li>
+            <li id="timestamp"><strong>$timestamp</strong>
+                —
+                <a title="\Akamai\Open\EdgeGrid\Authentication\Timestamp" href="../classes/_Akamai_Open_EdgeGrid_Authentication_Timestamp.html">\Akamai\Open\EdgeGrid\Authentication\Timestamp</a></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="makeBase64HmacSha256"><a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/makeBase64HmacSha256.html">makeBase64HmacSha256()</a>
+                — Returns Base64 encoded HMAC-SHA256 Hash</li>
+            <li id="makeDataToSign"><a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/makeDataToSign.html">makeDataToSign()</a>
+                — Returns a string with all data that will be signed</li>
+            <li id="signRequest"><a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/signRequest.html">signRequest()</a>
+                — Returns a signature for the request</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="createAuthHeaders">
+              <a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/createAuthHeaders.html">createAuthHeaders()</a>
+            </li>
+            <li id="setAction">
+              <a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/setAction.html">setAction()</a>
+            </li>
+            <li id="setKey"><a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/setKey.html">setKey()</a>
+                — Set the auth key and key name</li>
+            <li id="setNonce">
+              <a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/setNonce.html">setNonce()</a>
+            </li>
+            <li id="setPath"><a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/setPath.html">setPath()</a>
+                — Set request path</li>
+            <li id="setTimestamp">
+              <a title="Akamai\NetStorage\Authentication" href="../classes/Akamai_NetStorage_Authentication/setTimestamp.html">setTimestamp()</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.8.2-dev - Copyright (C) 2010 - 2015 by Arne Blankerts</span>
+    </footer>
+  </body>
+</html>
