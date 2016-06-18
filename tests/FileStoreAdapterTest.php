@@ -46,7 +46,7 @@ class FileStoreAdapterTest extends \PHPUnit_Framework_TestCase
         if (!file_exists(__DIR__ . '/fixtures')) {
             mkdir(__DIR__ . '/fixtures');
         }
-        
+
         $handler = new \Akamai\NetStorage\Handler\Authentication();
         $handler->setSigner((new \Akamai\NetStorage\Authentication())->setKey($this->key, $this->keyName));
 
@@ -94,9 +94,13 @@ class FileStoreAdapterTest extends \PHPUnit_Framework_TestCase
         }
     }
 
+    /**
+     * @expectedException \GuzzleHttp\Exception\ClientException
+     * @expectedExceptionCode 400
+     */
     public function testCreateDirInvalid()
     {
-        $this->markTestIncomplete();
+        $this->fs->createDir('/');
     }
 
     public function testDelete()
@@ -287,15 +291,13 @@ class FileStoreAdapterTest extends \PHPUnit_Framework_TestCase
         $this->fs->rename('/test/example.txt', '/test/example-2.txt');
     }
 
-    /**
-     * @expectedException \League\Flysystem\FileNotFoundException
-     * @expectedExceptionMessage File not found at path: test/non-existent
-     */
     public function testRenameNonExistent()
     {
         try {
-            $this->fs->rename('/test/non-existent', '/test/non-existent-2.txt');
-        } finally {
+            $this->fs->rename( '/test/non-existent', '/test/non-existent-2.txt' );
+        } catch (\Exception $e) {
+            $this->assertInstanceOf(\League\Flysystem\FileNotFoundException::class, $e);
+            $this->assertEquals("File not found at path: test/non-existent", $e->getMessage());
             $this->assertFalse($this->fs->has('/test/non-existent-2'));
         }
     }
@@ -307,22 +309,21 @@ class FileStoreAdapterTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('Goodbye Moon', $this->fs->read('/test/example.txt'));
     }
 
-    /**
-     * @expectedException \League\Flysystem\FileNotFoundException
-     * @expectedExceptionMessage File not found at path: test/non-existent
-     */
     public function testUpdateNonExistent()
     {
         try {
-            $this->fs->update('/test/non-existent', __METHOD__);
-        } finally {
-            // Make sure it didn't write the file
-            try {
-                $this->testReadNonExistent();
-            } catch (\Exception $e) {
+            $this->fs->update( '/test/non-existent', __METHOD__ );
+        } catch (\Exception $e) {
                 $this->assertInstanceOf(\League\Flysystem\FileNotFoundException::class, $e);
-                $this->assertSame('File not found at path: test/non-existent', $e->getMessage());
-            }
+                $this->assertEquals("File not found at path: test/non-existent", $e->getMessage());
+
+                // Make sure it didn't write the file
+                try {
+                    $this->testReadNonExistent();
+                } catch (\Exception $e) {
+                    $this->assertInstanceOf(\League\Flysystem\FileNotFoundException::class, $e);
+                    $this->assertSame('File not found at path: test/non-existent', $e->getMessage());
+                }
         }
     }
 
@@ -342,7 +343,7 @@ class FileStoreAdapterTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($this->fs->write('/test/example.txt', __METHOD__));
         $this->assertSame(__METHOD__, $this->fs->read('/test/example.txt'));
     }
-    
+
     /**
      * @expectedException \League\Flysystem\FileExistsException
      * @expectedExceptionMessage File already exists at path: test/example.txt
@@ -398,5 +399,29 @@ class FileStoreAdapterTest extends \PHPUnit_Framework_TestCase
                 $this->fs->read('/test/example.txt')
             );
         }
+    }
+
+    public function testCopyFile()
+    {
+        $this->testWrite();
+        $this->fs->copy('/test/example.txt', '/test/copy.txt');
+        $this->assertSame(
+            self::class . '::' . 'testWrite',
+            $this->fs->read('/test/example.txt')
+        );
+        $this->assertSame(
+            self::class . '::' . 'testWrite',
+            $this->fs->read('/test/copy.txt')
+        );
+    }
+
+    /**
+     * @expectedException \League\Flysystem\FileExistsException
+     * @expectedExceptionMessage File already exists at path: test/copy.txt
+     */
+    public function testCopyFileExisting()
+    {
+        $this->testCopyFile();
+        $this->fs->copy('/test/example.txt', '/test/copy.txt');
     }
 }
