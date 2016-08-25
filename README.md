@@ -61,7 +61,7 @@ $client = new \Akamai\Open\EdgeGrid\Client([
 // All parent directories must exist (e.g. /path/to)
 $client->put('/' . $cpCode . '/path/to/file', [
     'headers' => [
-        'X-Akamai-ACS-Action' => 'version=1&upload&sha1=' .sha1($fileContents)
+        'X-Akamai-ACS-Action' => 'version=1&action=upload&sha1=' .sha1($fileContents)
     ],
     'body' => $fileContents
 ]);
@@ -94,3 +94,5 @@ $fs = new \League\Flysystem\Filesystem($adapter);
 // Additionally, all required sub-directories are created transparently
 $fs->write('/path/to/file', $fileContents);
 ```
+Please note that $key, $keyName & $host can be obtained from "NetStorage API Information" page:
+https://control.akamai.com/storage/customer_portal.jsp?content_page=ns_api_info.jsp
