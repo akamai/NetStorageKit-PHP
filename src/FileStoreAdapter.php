@@ -251,7 +251,7 @@ class FileStoreAdapter extends AbstractAdapter implements AdapterInterface
         foreach ($xml->file as $file) {
             $meta = $this->handleFileMetaData($directory, $file);
             $dir[$meta['path']] = $meta;
-            if (!$recursive || $meta['type'] == 'dir') {
+            if ($recursive && $meta['type'] == 'dir') {
                 $dir[$meta['path']]['children'] = $this->listContents($meta['path'], $recursive);
             }
         }
