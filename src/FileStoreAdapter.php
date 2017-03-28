@@ -407,6 +407,11 @@ class FileStoreAdapter extends AbstractAdapter implements AdapterInterface
     public function writeStream($path, $resource, \League\Flysystem\Config $config)
     {
         $meta = $this->write($path, $resource, $config);
+        
+        if($meta === false) {
+            return false;
+        }
+        
         $meta['stream'] = $resource;
         return $meta;
     }
