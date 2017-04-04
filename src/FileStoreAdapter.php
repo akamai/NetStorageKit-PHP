@@ -239,7 +239,7 @@ class FileStoreAdapter extends AbstractAdapter implements AdapterInterface
      */
     public function listContents($directory = '', $recursive = false)
     {
-        $response = $this->httpClient->get($this->applyPathPrefix($directory), [
+        $response = $this->httpClient->get(rtrim($this->applyPathPrefix($directory), '\\/'), [
             'headers' => [
                 'X-Akamai-ACS-Action' => $this->getAcsActionHeaderValue('dir')
             ]
@@ -251,8 +251,12 @@ class FileStoreAdapter extends AbstractAdapter implements AdapterInterface
         foreach ($xml->file as $file) {
             $meta = $this->handleFileMetaData($directory, $file);
             $dir[$meta['path']] = $meta;
-            if ($recursive && $meta['type'] == 'dir') {
-                $dir[$meta['path']]['children'] = $this->listContents($meta['path'], $recursive);
+            if ($meta['type'] == 'dir') {
+                if($recursive) {
+                    $dir[$meta['path']]['children'] = $this->listContents($meta['path'], $recursive);
+                } else {
+                    $dir[$meta['path']]['children'] = [];
+                }
             }
         }
 
@@ -465,9 +469,15 @@ class FileStoreAdapter extends AbstractAdapter implements AdapterInterface
      */
     protected function handleFileMetaData($baseDir, $file = null)
     {
+        if($baseDir == '') {
+            $metaPath = (string) $file['name'];
+        } else {
+            $metaPath = (string) $baseDir . '/' . (string) $file['name'];
+        }
+        
         $meta = [
             'type' => (string) $file['type'],
-            'path' => (string) $baseDir . '/' . (string) $file['name'],
+            'path' => $metaPath,
             'visibility' => 'public',
             'timestamp' => (string) $file['mtime'],
         ];
