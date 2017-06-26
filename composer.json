@@ -2,7 +2,7 @@
     "name": "akamai-open/netstorage",
     "description": "Akamai NetStorage",
     "require": {
-        "akamai-open/edgegrid-client": "^0.3.0",
+        "akamai-open/edgegrid-client": "^0.6.0",
         "league/flysystem": "^1.0",
         "twistor/flysystem-stream-wrapper": "^1.0"
     },
