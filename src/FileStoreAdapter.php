@@ -190,7 +190,7 @@ class FileStoreAdapter extends AbstractAdapter implements AdapterInterface
      */
     public function getPathPrefix()
     {
-        return '/' . $this->cpCode . '/';
+        return '/' . $this->cpCode . '/'. $this->pathPrefix;
     }
 
     /**
