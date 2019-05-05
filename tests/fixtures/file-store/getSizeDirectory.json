@@ -1,0 +1,209 @@
+[
+    {
+        "status": 409,
+        "headers": {
+            "Server": [
+                "Apache"
+            ],
+            "Content-Type": [
+                "text\/html; charset=iso-8859-1"
+            ],
+            "Expires": [
+                "Sun, 05 May 2019 11:09:07 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Sun, 05 May 2019 11:09:07 GMT"
+            ],
+            "Connection": [
+                "close"
+            ],
+            "X-VCR-Recording": [
+                "1557054548"
+            ]
+        },
+        "body": "PCFET0NUWVBFIEhUTUwgUFVCTElDICItLy9JRVRGLy9EVEQgSFRNTCAyLjAvL0VOIj4KPEhUTUw+PEhFQUQ+CjxUSVRMRT40MDkgQ29uZmxpY3Q8L1RJVExFPgo8L0hFQUQ+PEJPRFk+CjxIMT5Db25mbGljdDwvSDE+ClRoZSBzZXJ2ZXIgZW5jb3VudGVyZWQgYW4gaW50ZXJuYWwgZXJyb3Igb3IKbWlzY29uZmlndXJhdGlvbiBhbmQgd2FzIHVuYWJsZSB0byBjb21wbGV0ZQp5b3VyIHJlcXVlc3QuPFA+ClBsZWFzZSBjb250YWN0IHRoZSBzZXJ2ZXIgYWRtaW5pc3RyYXRvciwKIFtubyBhZGRyZXNzIGdpdmVuXSBhbmQgaW5mb3JtIHRoZW0gb2YgdGhlIHRpbWUgdGhlIGVycm9yIG9jY3VycmVkLAphbmQgYW55dGhpbmcgeW91IG1pZ2h0IGhhdmUgZG9uZSB0aGF0IG1heSBoYXZlCmNhdXNlZCB0aGUgZXJyb3IuPFA+Ck1vcmUgaW5mb3JtYXRpb24gYWJvdXQgdGhpcyBlcnJvciBtYXkgYmUgYXZhaWxhYmxlCmluIHRoZSBzZXJ2ZXIgZXJyb3IgbG9nLjxQPgo8L0JPRFk+PC9IVE1MPgo=",
+        "version": "1.1",
+        "reason": "Conflict"
+    },
+    {
+        "status": 200,
+        "headers": {
+            "Server": [
+                "Apache"
+            ],
+            "Content-Type": [
+                "text\/xml"
+            ],
+            "Expires": [
+                "Sun, 05 May 2019 11:09:08 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Sun, 05 May 2019 11:09:08 GMT"
+            ],
+            "Content-Length": [
+                "135"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1557054548"
+            ]
+        },
+        "body": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iSVNPLTg4NTktMSI\/Pgo8c3RhdCBkaXJlY3Rvcnk9Ii8zODM1NjgvdGVzdCI+Cgk8ZmlsZSB0eXBlPSJkaXIiIG5hbWU9InRlc3QiIG10aW1lPSIxNTU3MDU0NTQ2Ii8+Cjwvc3RhdD4K",
+        "version": "1.1",
+        "reason": "OK"
+    },
+    {
+        "status": 200,
+        "headers": {
+            "Server": [
+                "Apache"
+            ],
+            "Content-Type": [
+                "text\/xml"
+            ],
+            "Expires": [
+                "Sun, 05 May 2019 11:09:08 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Sun, 05 May 2019 11:09:08 GMT"
+            ],
+            "Content-Length": [
+                "135"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1557054548"
+            ]
+        },
+        "body": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iSVNPLTg4NTktMSI\/Pgo8c3RhdCBkaXJlY3Rvcnk9Ii8zODM1NjgvdGVzdCI+Cgk8ZmlsZSB0eXBlPSJkaXIiIG5hbWU9InRlc3QiIG10aW1lPSIxNTU3MDU0NTQ2Ii8+Cjwvc3RhdD4K",
+        "version": "1.1",
+        "reason": "OK"
+    },
+    {
+        "status": 200,
+        "headers": {
+            "Server": [
+                "Apache"
+            ],
+            "Content-Type": [
+                "text\/xml"
+            ],
+            "Expires": [
+                "Sun, 05 May 2019 11:09:08 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Sun, 05 May 2019 11:09:08 GMT"
+            ],
+            "Content-Length": [
+                "130"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1557054548"
+            ]
+        },
+        "body": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iSVNPLTg4NTktMSI\/Pgo8c3RhdCBkaXJlY3Rvcnk9Ii8zODM1NjgiPgoJPGZpbGUgdHlwZT0iZGlyIiBuYW1lPSJ0ZXN0IiBtdGltZT0iMTU1NzA1NDU0NyIvPgo8L3N0YXQ+Cg==",
+        "version": "1.1",
+        "reason": "OK"
+    },
+    {
+        "status": 200,
+        "headers": {
+            "Server": [
+                "Apache"
+            ],
+            "Content-Type": [
+                "text\/xml"
+            ],
+            "Expires": [
+                "Sun, 05 May 2019 11:09:08 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Sun, 05 May 2019 11:09:08 GMT"
+            ],
+            "Content-Length": [
+                "615"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1557054548"
+            ]
+        },
+        "body": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iSVNPLTg4NTktMSI\/Pgo8c3RhdCBkaXJlY3Rvcnk9Ii8zODM1NjgvdGVzdCI+Cgk8ZmlsZSB0eXBlPSJkaXIiIG5hbWU9IjVjY2VjMmVlYjhlNzUiIG10aW1lPSIxNTU3MDU0MTkwIi8+Cgk8ZmlsZSB0eXBlPSJkaXIiIG5hbWU9IjVjY2VjMzg4ZDBhZTkiIG10aW1lPSIxNTU3MDU0MzQ0Ii8+Cgk8ZmlsZSB0eXBlPSJkaXIiIG5hbWU9IjVjY2VjM2FhNzdjYTUiIG10aW1lPSIxNTU3MDU0MzgyIi8+Cgk8ZmlsZSB0eXBlPSJkaXIiIG5hbWU9IjVjY2VjNDUzMDFhZTIiIG10aW1lPSIxNTU3MDU0NTQ3Ii8+Cgk8ZmlsZSB0eXBlPSJkaXIiIG5hbWU9IjVjY2VjNDRjZTRiZjkiIG10aW1lPSIxNTU3MDU0NTQxIi8+Cgk8ZmlsZSB0eXBlPSJkaXIiIG5hbWU9IjVjY2VjM2EwMTI1NmUiIG10aW1lPSIxNTU3MDU0MzY4Ii8+Cgk8ZmlsZSB0eXBlPSJkaXIiIG5hbWU9InRlc3QiIG10aW1lPSIxNTU3MDU0NTQ2Ii8+Cgk8ZmlsZSB0eXBlPSJkaXIiIG5hbWU9IjVjY2VjNDQ1MDQ1M2IiIG10aW1lPSIxNTU3MDU0NTMzIi8+Cgk8ZmlsZSB0eXBlPSJkaXIiIG5hbWU9IjVjY2VjMzVhYjNmNjUiIG10aW1lPSIxNTU3MDU0Mjk4Ii8+Cjwvc3RhdD4K",
+        "version": "1.1",
+        "reason": "OK"
+    },
+    {
+        "status": 404,
+        "headers": {
+            "Server": [
+                "Apache"
+            ],
+            "Content-Type": [
+                "text\/html; charset=iso-8859-1"
+            ],
+            "Expires": [
+                "Sun, 05 May 2019 11:09:08 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Sun, 05 May 2019 11:09:08 GMT"
+            ],
+            "Content-Length": [
+                "16"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1557054548"
+            ]
+        },
+        "body": "RmlsZSBub3QgZm91bmQuIg==",
+        "version": "1.1",
+        "reason": "Not Found"
+    }
+]
