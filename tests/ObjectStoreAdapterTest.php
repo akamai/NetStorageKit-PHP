@@ -155,7 +155,7 @@ class ObjectStoreAdapterTest extends \PHPUnit_Framework_TestCase
             'mimetype' => 'image/jpeg',
         ];
 
-        $this->assertArraySubset($expected, $meta);
+        $this->assertArrayPartial($expected, $meta);
     }
 
     public function testGetMetadataDir()
@@ -170,7 +170,7 @@ class ObjectStoreAdapterTest extends \PHPUnit_Framework_TestCase
             'name' => 'test',
         ];
 
-        $this->assertArraySubset($expected, $meta);
+        $this->assertArrayPartial($expected, $meta);
     }
 
     /**
@@ -439,5 +439,13 @@ class ObjectStoreAdapterTest extends \PHPUnit_Framework_TestCase
     {
         $this->testCopyFile();
         $this->fs->copy('/example.txt', '/copy.txt');
+    }
+
+    public function assertArrayPartial($subset, $array, $strict = false, $message = '')
+    {
+        foreach ($subset as $key => $value) {
+            $this->assertArrayHasKey($key, $array);
+            $this->assertEquals($value, $array[$key]);
+        }
     }
 }
