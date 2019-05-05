@@ -229,10 +229,6 @@ class ObjectStoreAdapterTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($this->fs->getSize('/' . $temp));
     }
 
-    /**
-     * @expectedException \League\Flysystem\FileNotFoundException
-     * @expectedExceptionMessage File not found at path: non-existent
-     */
     public function testGetSizeNonExistent()
     {
         $this->assertFalse($this->fs->getSize('/non-existent'));
