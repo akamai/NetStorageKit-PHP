@@ -45,7 +45,12 @@ matrix:
       env: DEPS='lock'
     - php: 7.0
       env: DEPS='lock'
-    # Everything except nightly should pass with high/low
+    # Everything except nightly should pass with high
+    # Everything higher than the current running PHP may fail with low
+    - php: 7.2
+      env: DEPS='low'
+    - php: 7.3
+      env: DEPS='low'
 sudo: false
 before_install:
   - composer self-update
