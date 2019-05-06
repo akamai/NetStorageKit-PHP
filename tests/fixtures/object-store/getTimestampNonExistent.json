@@ -1,0 +1,300 @@
+[
+    {
+        "status": 404,
+        "headers": {
+            "Accept-Ranges": [
+                "bytes"
+            ],
+            "Content-Length": [
+                "10"
+            ],
+            "Server": [
+                "AkamaiNetStorage"
+            ],
+            "X-N": [
+                "S"
+            ],
+            "Expires": [
+                "Sun, 05 May 2019 10:26:45 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Sun, 05 May 2019 10:26:45 GMT"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1557052005"
+            ]
+        },
+        "body": "Tm90IGZvdW5kCg==",
+        "version": "1.1",
+        "reason": "Not Found"
+    },
+    {
+        "status": 200,
+        "headers": {
+            "Accept-Ranges": [
+                "bytes"
+            ],
+            "Content-Length": [
+                "11"
+            ],
+            "Server": [
+                "AkamaiNetStorage"
+            ],
+            "Expires": [
+                "Sun, 05 May 2019 10:26:45 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Sun, 05 May 2019 10:26:45 GMT"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1557052005"
+            ]
+        },
+        "body": "c3VjY2Vzc2Z1bAo=",
+        "version": "1.1",
+        "reason": "OK"
+    },
+    {
+        "status": 200,
+        "headers": {
+            "Accept-Ranges": [
+                "bytes"
+            ],
+            "Content-Length": [
+                "125"
+            ],
+            "Content-Type": [
+                "text\/xml"
+            ],
+            "Server": [
+                "AkamaiNetStorage"
+            ],
+            "Expires": [
+                "Sun, 05 May 2019 10:26:46 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Sun, 05 May 2019 10:26:46 GMT"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1557052006"
+            ]
+        },
+        "body": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN0YXQgZGlyZWN0b3J5PSIvODI0MTM3Ij4KIDxmaWxlIHR5cGU9ImRpciIgbmFtZT0idGVzdCIgbXRpbWU9IjE1NTcwNTIwMDUiLz4KPC9zdGF0Pgo=",
+        "version": "1.1",
+        "reason": "OK"
+    },
+    {
+        "status": 404,
+        "headers": {
+            "Accept-Ranges": [
+                "bytes"
+            ],
+            "Content-Length": [
+                "10"
+            ],
+            "Server": [
+                "AkamaiNetStorage"
+            ],
+            "X-N": [
+                "S"
+            ],
+            "Expires": [
+                "Sun, 05 May 2019 10:26:46 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Sun, 05 May 2019 10:26:46 GMT"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1557052006"
+            ]
+        },
+        "body": "Tm90IGZvdW5kCg==",
+        "version": "1.1",
+        "reason": "Not Found"
+    },
+    {
+        "status": 200,
+        "headers": {
+            "Accept-Ranges": [
+                "bytes"
+            ],
+            "Content-Length": [
+                "125"
+            ],
+            "Content-Type": [
+                "text\/xml"
+            ],
+            "Server": [
+                "AkamaiNetStorage"
+            ],
+            "Expires": [
+                "Sun, 05 May 2019 10:26:46 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Sun, 05 May 2019 10:26:46 GMT"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1557052006"
+            ]
+        },
+        "body": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN0YXQgZGlyZWN0b3J5PSIvODI0MTM3Ij4KIDxmaWxlIHR5cGU9ImRpciIgbmFtZT0idGVzdCIgbXRpbWU9IjE1NTcwNTIwMDUiLz4KPC9zdGF0Pgo=",
+        "version": "1.1",
+        "reason": "OK"
+    },
+    {
+        "status": 200,
+        "headers": {
+            "Accept-Ranges": [
+                "bytes"
+            ],
+            "Content-Type": [
+                "text\/xml"
+            ],
+            "Server": [
+                "AkamaiNetStorage"
+            ],
+            "Content-Length": [
+                "94"
+            ],
+            "Expires": [
+                "Sun, 05 May 2019 10:26:46 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Sun, 05 May 2019 10:26:46 GMT"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1557052006"
+            ]
+        },
+        "body": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPGxpc3Q+CiA8ZmlsZSB0eXBlPSJkaXIiIG5hbWU9IjgyNDEzNy90ZXN0LyIvPgo8L2xpc3Q+Cg==",
+        "version": "1.1",
+        "reason": "OK"
+    },
+    {
+        "status": 200,
+        "headers": {
+            "Accept-Ranges": [
+                "bytes"
+            ],
+            "Content-Length": [
+                "126"
+            ],
+            "Content-Type": [
+                "text\/xml"
+            ],
+            "Server": [
+                "AkamaiNetStorage"
+            ],
+            "Expires": [
+                "Sun, 05 May 2019 10:26:46 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Sun, 05 May 2019 10:26:46 GMT"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1557052006"
+            ]
+        },
+        "body": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN0YXQgZGlyZWN0b3J5PSIvODI0MTM3Ij4KIDxmaWxlIHR5cGU9ImRpciIgbmFtZT0idGVzdC8iIG10aW1lPSIxNTU3MDUyMDA1Ii8+Cjwvc3RhdD4K",
+        "version": "1.1",
+        "reason": "OK"
+    },
+    {
+        "status": 200,
+        "headers": {
+            "Accept-Ranges": [
+                "bytes"
+            ],
+            "Content-Length": [
+                "8"
+            ],
+            "Server": [
+                "AkamaiNetStorage"
+            ],
+            "Expires": [
+                "Sun, 05 May 2019 10:26:46 GMT"
+            ],
+            "Cache-Control": [
+                "max-age=0, no-cache, no-store"
+            ],
+            "Pragma": [
+                "no-cache"
+            ],
+            "Date": [
+                "Sun, 05 May 2019 10:26:46 GMT"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "X-VCR-Recording": [
+                "1557052006"
+            ]
+        },
+        "body": "ZGVsZXRlZAo=",
+        "version": "1.1",
+        "reason": "OK"
+    }
+]

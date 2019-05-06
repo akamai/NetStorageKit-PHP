@@ -21,9 +21,7 @@
  */
 namespace Akamai\NetStorage\Tests;
 
-use League\Flysystem\FileExistsException;
-
-class FileStoreAdapterTest extends \PHPUnit_Framework_TestCase
+class ObjectStoreAdapterTest extends \PHPUnit_Framework_TestCase
 {
     protected $key = "netstorage-key";
 
@@ -34,9 +32,13 @@ class FileStoreAdapterTest extends \PHPUnit_Framework_TestCase
     protected $cpCode = '123456';
 
     /**
-     * @var \Akamai\NetStorage\FileStoreAdapter
+     * @var \Akamai\NetStorage\ObjectStoreAdapter
      */
     protected $fs;
+    /**
+     * @var \Akamai\NetStorage\ObjectStoreAdapter
+     */
+    protected $adapter;
 
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
@@ -47,15 +49,15 @@ class FileStoreAdapterTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        if (!file_exists(__DIR__ . '/fixtures/file-store')) {
-            mkdir(__DIR__ . '/fixtures/file-store', 0777, true);
+        if (!file_exists(__DIR__ . '/fixtures/object-store')) {
+            mkdir(__DIR__ . '/fixtures/object-store', 0777, true);
         }
 
         $handler = new \Akamai\NetStorage\Handler\Authentication();
         $handler->setSigner((new \Akamai\NetStorage\Authentication())->setKey($this->key, $this->keyName));
 
         $stack = \Dshafik\GuzzleHttp\VcrHandler::turnOn(
-            __DIR__ . '/fixtures/file-store/' . lcfirst(substr($this->getName(), 4)) . '.json'
+            __DIR__ . '/fixtures/object-store/' . lcfirst(substr($this->getName(), 4)) . '.json'
         );
         $stack->push($handler, 'netstorage-handler');
 
@@ -63,7 +65,7 @@ class FileStoreAdapterTest extends \PHPUnit_Framework_TestCase
             'base_uri' => $this->host,
             'handler' => $stack
         ]);
-        $this->adapter = new \Akamai\NetStorage\FileStoreAdapter($client, $this->cpCode);
+        $this->adapter = new \Akamai\NetStorage\ObjectStoreAdapter($client, $this->cpCode);
         $this->adapter->setPathPrefix('/test');
         $this->fs = new \League\Flysystem\Filesystem($this->adapter);
     }
@@ -115,37 +117,37 @@ class FileStoreAdapterTest extends \PHPUnit_Framework_TestCase
 
     public function testDelete()
     {
-        $this->assertTrue($this->fs->write('/test/HelloWorld.txt', "Hello World"));
-        $this->assertTrue($this->fs->delete('/test/HelloWorld.txt'));
+        $this->assertTrue($this->fs->write('/HelloWorld.txt', "Hello World"));
+        $this->assertTrue($this->fs->delete('/HelloWorld.txt'));
     }
 
     public function testDeleteDir()
     {
         $temp = uniqid();
 
-        $this->assertTrue($this->fs->write('/test/nested/subdir/' . $temp . '/example.txt', __METHOD__));
-        $this->assertSame(__METHOD__, $this->fs->read('/test/nested/subdir/' . $temp . '/example.txt'));
-        $this->assertTrue($this->fs->deleteDir('/test'));
+        $this->assertTrue($this->fs->write('/nested/subdir/' . $temp . '/example.txt', __METHOD__));
+        $this->assertSame(__METHOD__, $this->fs->read('/nested/subdir/' . $temp . '/example.txt'));
+        $this->assertTrue($this->fs->deleteDir('/nested'));
     }
 
     /**
      * @expectedException \League\Flysystem\FileNotFoundException
-     * @expectedExceptionMessage File not found at path: test/non-existent
+     * @expectedExceptionMessage File not found at path: non-existent
      */
     public function testDeleteNonExistent()
     {
-        $this->fs->delete('/test/non-existent');
+        $this->fs->delete('/non-existent');
     }
 
     public function testGetMetadata()
     {
-        $this->fs->write('/test/image.jpg', "Not really a JPEG");
-        $this->assertSame("Not really a JPEG", $this->fs->read('/test/image.jpg'));
-        $meta = $this->fs->getMetadata('/test/image.jpg');
+        $this->fs->write('/image.jpg', "Not really a JPEG");
+        $this->assertSame("Not really a JPEG", $this->fs->read('/image.jpg'));
+        $meta = $this->fs->getMetadata('/image.jpg');
 
         $expected = [
             'type' => 'file',
-            'path' => '/test/image.jpg',
+            'path' => '/image.jpg',
             'visibility' => 'public',
             'name' => 'image.jpg',
             'size' => '17',
@@ -158,7 +160,7 @@ class FileStoreAdapterTest extends \PHPUnit_Framework_TestCase
 
     public function testGetMetadataDir()
     {
-        $this->testWrite();
+        $this->fs->createDir('/test');
         $meta = $this->fs->getMetadata('/test');
 
         $expected = [
@@ -173,27 +175,25 @@ class FileStoreAdapterTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \League\Flysystem\FileNotFoundException
-     * @expectedExceptionMessage File not found at path: test/non-existent
+     * @expectedExceptionMessage File not found at path: non-existent
      */
     public function testGetMetadataNonExistent()
     {
-        $this->fs->getMetadata('/test/non-existent');
+        $this->fs->getMetadata('/non-existent');
     }
 
     public function testGetMimetype()
     {
-        try {
-            $this->testWrite();
-        } catch (FileExistsException $e) { }
-        $this->assertSame('text/plain', $this->fs->getMimetype('/test/example.txt'));
+        $this->testWrite();
+        $this->assertSame('text/plain', $this->fs->getMimetype('/example.txt'));
 
-        $this->fs->write('/test/image.jpg', "Not really a JPEG");
-        $this->assertSame('image/jpeg', $this->fs->getMimetype('/test/image.jpg'));
+        $this->fs->write('/image.jpg', "Not really a JPEG");
+        $this->assertSame('image/jpeg', $this->fs->getMimetype('/image.jpg'));
     }
 
     /**
      * @expectedException \GuzzleHttp\Exception\ClientException
-     * @expectedExceptionCode 412
+     * @expectedExceptionCode 404
      */
     public function testGetMimetypeDirectory()
     {
@@ -208,140 +208,133 @@ class FileStoreAdapterTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \League\Flysystem\FileNotFoundException
-     * @expectedExceptionMessage File not found at path: test/non-existent
+     * @expectedExceptionMessage File not found at path: non-existent
      */
     public function testGetMimetypeNonExistent()
     {
-        $this->fs->getMimetype('/test/non-existent');
+        $this->fs->getMimetype('/non-existent');
     }
 
     public function testGetSize()
     {
-        try {
-            $this->testWrite();
-        } catch (FileExistsException $e) { }
-        $this->assertSame(strlen(self::class . '::' . 'testWrite'), $this->fs->getSize('/test/example.txt'));
+        $this->testWrite();
+        $this->assertSame(strlen(self::class . '::' . 'testWrite'), $this->fs->getSize('/example.txt'));
     }
 
     public function testGetSizeDirectory()
     {
-        $this->assertFalse($this->fs->getSize('/test'));
+        $temp = uniqid();
+        $this->fs->createDir('/' . $temp);
+
+        $this->assertFalse($this->fs->getSize('/' . $temp));
     }
 
     public function testGetSizeNonExistent()
     {
-        $this->assertFalse($this->fs->getSize('/test/non-existent'));
+        $this->assertFalse($this->fs->getSize('/non-existent'));
     }
 
     public function testGetTimestamp()
     {
-        try {
-            $this->testWrite();
-        } catch (FileExistsException $e) { }
-        $this->assertEquals("1557054190", $this->fs->getTimestamp('/test/example.txt'), "Fixture has changed, check the expected value!");
+        $this->testWrite();
+        $this->assertEquals("1557051806", $this->fs->getTimestamp('/example.txt'), "Fixture has changed, check the expected value!");
     }
 
     public function testGetTimestampDirectory()
     {
-        $this->assertSame("1557054546", $this->fs->getTimestamp('/test'), "Fixture has changed, check the expected value!");
+        $temp = uniqid();
+        $this->fs->createDir('/' . $temp);
+
+        $this->assertSame("1557051993", $this->fs->getTimestamp('/' . $temp), "Fixture has changed, check the expected value!");
     }
 
     /**
      * @expectedException \League\Flysystem\FileNotFoundException
-     * @expectedExceptionMessage File not found at path: test/non-existent
+     * @expectedExceptionMessage File not found at path: non-existent
      */
     public function testGetTimestampNonExistent()
     {
-        $this->assertFalse($this->fs->getTimestamp('/test/non-existent'));
+        $this->assertFalse($this->fs->getTimestamp('/non-existent'));
     }
 
     public function testRead()
     {
-        $file = uniqid();
-        $this->fs->write('/test/' . $file, __METHOD__);
-        $this->assertSame(__METHOD__, $this->fs->read('/test/' . $file));
+        $this->fs->write('/example.txt', __METHOD__);
+        $this->assertSame(__METHOD__, $this->fs->read('/example.txt'));
     }
 
     /**
      * @expectedException \League\Flysystem\FileNotFoundException
-     * @expectedExceptionMessage File not found at path: test/non-existent
+     * @expectedExceptionMessage File not found at path: non-existent
      */
     public function testReadNonExistent()
     {
-        $this->fs->read('/test/non-existent');
+        $this->fs->read('/non-existent');
     }
 
     public function testReadStream()
     {
-        $file = uniqid();
-        $this->fs->write('/test/' . $file, __METHOD__);
-        $this->assertSame(__METHOD__, stream_get_contents($this->fs->readStream('/test/' . $file)));
+        $this->fs->write('/example.txt', __METHOD__);
+        $this->assertSame(__METHOD__, stream_get_contents($this->fs->readStream('/example.txt')));
     }
 
     /**
      * @expectedException \League\Flysystem\FileNotFoundException
-     * @expectedExceptionMessage File not found at path: test/non-existent
+     * @expectedExceptionMessage File not found at path: non-existent
      */
     public function testReadStreamNonExistent()
     {
-        $this->fs->readStream('/test/non-existent');
+        $this->fs->readStream('/non-existent');
     }
 
     public function testRename()
     {
-        try {
-            $this->testWrite();
-        } catch (FileExistsException $e) { }
-        $this->fs->rename('/test/example.txt', '/test/example-2.txt');
-        $this->assertSame(strlen(self::class . '::' . 'testWrite'), $this->fs->getSize('/test/example-2.txt'));
+        $this->testWrite();
+        $this->fs->rename('/example.txt', '/example-2.txt');
+        $this->assertSame(strlen(self::class . '::' . 'testWrite'), $this->fs->getSize('/example-2.txt'));
     }
 
     /**
      * @expectedException \League\Flysystem\FileExistsException
-     * @expectedExceptionMessage File already exists at path: test/example-2.txt
+     * @expectedExceptionMessage File already exists at path: example-2.txt
      */
     public function testRenameExisting()
     {
-        try {
-            $this->testWrite();
-        } catch (FileExistsException $e) { }
-        $this->fs->write('/test/example-2.txt', 'Foo');
-        $this->fs->rename('/test/example.txt', '/test/example-2.txt');
+        $this->testWrite();
+        $this->fs->write('/example-2.txt', 'Foo');
+        $this->fs->rename('/example.txt', '/example-2.txt');
     }
 
+    /**
+     * @expectedException \League\Flysystem\FileNotFoundException
+     * @expectedExceptionMessage File not found at path: non-existent
+     */
     public function testRenameNonExistent()
     {
-        try {
-            $this->fs->rename( '/test/non-existent', '/test/non-existent-2.txt' );
-        } catch (\Exception $e) {
-            $this->assertInstanceOf(\League\Flysystem\FileNotFoundException::class, $e);
-            $this->assertEquals("File not found at path: test/non-existent", $e->getMessage());
-            $this->assertFalse($this->fs->has('/test/non-existent-2'));
-        }
+        $this->fs->rename( '/non-existent', '/non-existent-2.txt' );
     }
 
     public function testUpdate()
     {
-        $file = uniqid();
-        $this->assertTrue($this->fs->write('/test/' . $file, 'Hello World'));
-        $this->assertTrue($this->fs->update('/test/' . $file, 'Goodbye Moon'));
-        $this->assertSame('Goodbye Moon', $this->fs->read('/test/' . $file));
+        $this->assertTrue($this->fs->write('/example.txt', 'Hello World'));
+        $this->assertTrue($this->fs->update('/example.txt', 'Goodbye Moon'));
+        $this->assertSame('Goodbye Moon', $this->fs->read('/example.txt'));
     }
 
     public function testUpdateNonExistent()
     {
         try {
-            $this->fs->update( '/test/non-existent', __METHOD__ );
+            $this->fs->update( '/non-existent', __METHOD__ );
         } catch (\Exception $e) {
                 $this->assertInstanceOf(\League\Flysystem\FileNotFoundException::class, $e);
-                $this->assertEquals("File not found at path: test/non-existent", $e->getMessage());
+                $this->assertEquals("File not found at path: non-existent", $e->getMessage());
 
                 // Make sure it didn't write the file
                 try {
                     $this->testReadNonExistent();
                 } catch (\Exception $e) {
                     $this->assertInstanceOf(\League\Flysystem\FileNotFoundException::class, $e);
-                    $this->assertSame('File not found at path: test/non-existent', $e->getMessage());
+                    $this->assertSame('File not found at path: non-existent', $e->getMessage());
                 }
         }
     }
@@ -352,31 +345,30 @@ class FileStoreAdapterTest extends \PHPUnit_Framework_TestCase
         fputs($fp, 'Goodbye Moon');
         fseek($fp, 0);
 
-        $file = uniqid();
-        $this->assertTrue($this->fs->write('/test/' . $file, 'Hello World'));
-        $this->assertTrue($this->fs->updateStream('/test/' . $file, $fp));
-        $this->assertSame('Goodbye Moon', $this->fs->read('/test/' . $file));
+        $this->assertTrue($this->fs->write('/example.txt', 'Hello World'));
+        $this->assertTrue($this->fs->updateStream('/example.txt', $fp));
+        $this->assertSame('Goodbye Moon', $this->fs->read('/example.txt'));
     }
 
     public function testWrite()
     {
-        $this->assertTrue($this->fs->write('/test/example.txt', __METHOD__));
-        $this->assertSame(__METHOD__, $this->fs->read('/test/example.txt'));
+        $this->assertTrue($this->fs->write('/example.txt', __METHOD__));
+        $this->assertSame(__METHOD__, $this->fs->read('/example.txt'));
     }
 
     /**
      * @expectedException \League\Flysystem\FileExistsException
-     * @expectedExceptionMessage File already exists at path: test/example.txt
+     * @expectedExceptionMessage File already exists at path: example.txt
      */
     public function testWriteExistingFile()
     {
         $this->testWrite();
         try {
-            $this->fs->write('/test/example.txt', __METHOD__);
+            $this->fs->write('/example.txt', __METHOD__);
         } finally {
             $this->assertSame(
                 self::class . '::' . 'testWrite',
-                $this->fs->read('/test/example.txt')
+                $this->fs->read('/example.txt')
             );
         }
     }
@@ -386,23 +378,23 @@ class FileStoreAdapterTest extends \PHPUnit_Framework_TestCase
     {
         $temp = uniqid();
 
-        $this->assertTrue($this->fs->write('/test/nested/subdir/' . $temp . '/example.txt', __METHOD__));
-        $this->assertSame(__METHOD__, $this->fs->read('/test/nested/subdir/' . $temp . '/example.txt'));
+        $this->assertTrue($this->fs->write('/nested/subdir/' . $temp . '/example.txt', __METHOD__));
+        $this->assertSame(__METHOD__, $this->fs->read('/nested/subdir/' . $temp . '/example.txt'));
     }
 
     public function testWriteStream()
     {
         $fp = fopen('php://memory', 'w+');
-        fputs($fp, __METHOD__);
+        fwrite($fp, __METHOD__);
         fseek($fp, 0);
 
-        $this->assertTrue($this->fs->writeStream('/test/example.txt', $fp));
-        $this->assertSame(__METHOD__, $this->fs->read('/test/example.txt'));
+        $this->assertTrue($this->fs->writeStream('/example.txt', $fp));
+        $this->assertSame(__METHOD__, $this->fs->read('/example.txt'));
     }
 
     /**
      * @expectedException \League\Flysystem\FileExistsException
-     * @expectedExceptionMessage File already exists at path: test/example.txt
+     * @expectedExceptionMessage File already exists at path: example.txt
      */
     public function testWriteStreamExistingFile()
     {
@@ -412,42 +404,37 @@ class FileStoreAdapterTest extends \PHPUnit_Framework_TestCase
         fputs($fp, __METHOD__);
         fseek($fp, 0);
         try {
-            $this->fs->writeStream('/test/example.txt', $fp);
+            $this->fs->writeStream('/example.txt', $fp);
         } finally {
             $this->assertSame(
                 self::class . '::' . 'testWriteStream',
-                $this->fs->read('/test/example.txt')
+                $this->fs->read('/example.txt')
             );
         }
     }
 
     public function testCopyFile()
     {
-        try {
-            $this->testWrite();
-        } catch (FileExistsException $e) { }
-        $this->fs->copy('/test/example.txt', '/test/copy.txt');
+        $this->testWrite();
+        $this->fs->copy('/example.txt', '/copy.txt');
         $this->assertSame(
             self::class . '::' . 'testWrite',
-            $this->fs->read('/test/example.txt')
+            $this->fs->read('/example.txt')
         );
         $this->assertSame(
             self::class . '::' . 'testWrite',
-            $this->fs->read('/test/copy.txt')
+            $this->fs->read('/copy.txt')
         );
     }
 
     /**
      * @expectedException \League\Flysystem\FileExistsException
-     * @expectedExceptionMessage File already exists at path: test/copy.txt
+     * @expectedExceptionMessage File already exists at path: copy.txt
      */
     public function testCopyFileExisting()
     {
-        try {
-            $this->testWrite();
-        } catch (FileExistsException $e) { }
-        $this->fs->copy('/test/example.txt', '/test/copy.txt');
-        $this->fs->copy('/test/example.txt', '/test/copy.txt');
+        $this->testCopyFile();
+        $this->fs->copy('/example.txt', '/copy.txt');
     }
 
     public function assertArrayPartial($subset, $array, $strict = false, $message = '')

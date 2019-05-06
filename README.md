@@ -2,14 +2,13 @@
 
 This library provides the following NetStorage tools
  
-- a [FlySystem](http://flysystem.thephpleague.com) adapter for NetStorage FileStore (`\Akamai\NetStorage\FileStoreAdapter`)
+- a [FlySystem](http://flysystem.thephpleague.com) adapter for NetStorage ObjectStore (`\Akamai\NetStorage\ObjectStoreAdapter`) and FileStore (`\Akamai\NetStorage\FileStoreAdapter`)
 - a request signer (`\Akamai\NetStorage\Authentication`)
 - a [Guzzle](http://guzzlephp.org) middleware for transparently signing requests to the API (`\Akamai\NetStorage\Handler\Authentication`)
 
 ## To Do:
 
 - [ ] A PHP streams layer, so you can use `netstorage.fs://path` with _any_ built-in I/O functions (e.g. `fopen`, `fread()`, and `fputs`, or `file_get_contents()` and `file_put_contents()`)
-- [ ] A FlySystem adapter for NetStorage ObjectStore
 
 ## Installation
 
@@ -67,9 +66,9 @@ $client->put('/' . $cpCode . '/path/to/file', [
 ]);
 ```
 
-### Using the FlySystem Adapter
+### Using the FlySystem Adapters
 
-The simplest way to interact with NetStorage FileStore is using the `\Akamai\NetStorage\FileStoreAdapter` for [FlySystem](http://flysystem.thephpleague.com).
+The simplest way to interact with NetStorage ObjectStore or FileStore is using the `\Akamai\NetStorage\ObjectStoreAdapter` or `\Akamai\NetStorage\FileStoreAdapter` for [FlySystem](http://flysystem.thephpleague.com).
 
 ```php
 $signer = new \Akamai\NetStorage\Authentication();
@@ -86,7 +85,7 @@ $client = new \Akamai\Open\EdgeGrid\Client([
     'handler' => $stack
 ]);
 
-$adapter = new \Akamai\NetStorage\FileStoreAdapter($client, $cpCode);
+$adapter = new \Akamai\NetStorage\ObjectStoreAdapter($client, $cpCode);
 $fs = new \League\Flysystem\Filesystem($adapter);
 
 // Upload a file:
@@ -94,5 +93,6 @@ $fs = new \League\Flysystem\Filesystem($adapter);
 // Additionally, all required sub-directories are created transparently
 $fs->write('/path/to/file', $fileContents);
 ```
+
 Please note that $key, $keyName & $host can be obtained from "NetStorage API Information" page:
 https://control.akamai.com/storage/customer_portal.jsp?content_page=ns_api_info.jsp
