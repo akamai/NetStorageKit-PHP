@@ -1,5 +1,12 @@
 # Akamai NetStorage for PHP
 
+Important
+------------
+
+Akamai does not maintain or regulate this package. While it can be incorporated to assist you in API use, Akamai Technical Support will not offer assistance and Akamai cannot be held liable if issues arise from its use. 
+
+## Overview:
+
 This library provides the following NetStorage tools
  
 - a [FlySystem](http://flysystem.thephpleague.com) adapter for NetStorage ObjectStore (`\Akamai\NetStorage\ObjectStoreAdapter`) and FileStore (`\Akamai\NetStorage\FileStoreAdapter`)
